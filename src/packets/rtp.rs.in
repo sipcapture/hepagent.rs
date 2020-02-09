@@ -1,0 +1,20 @@
+// probably use rtp-rs crate?
+use pnet_macros_support::packet::PrimitiveValues;
+use pnet_macros_support::types::*;
+
+#[packet]
+pub struct Rtp {
+    pub version: u2,
+    pub padding: u1,
+    pub extension: u1,
+    pub csrc_count: u4,
+    pub marker: u1,
+    pub payload_type: u7,
+    pub sequence_number: u16be,
+    pub timestamp: u32be,
+    pub ssrc: u32be,
+    #[length = "csrc_count"]
+    pub csrc: u32be,
+    #[payload]
+    pub payload: Vec<u8>,
+}

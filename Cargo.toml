@@ -1,0 +1,48 @@
+[package]
+authors = ["Berkus Decker <berkus+cargo@metta.systems>","Alexandr Dubovikov <alexandr.dubovikov@gmail.com>",]
+name = "hepagent"
+publish = false
+version = "0.1.0"
+build = "build.rs"
+
+[build-dependencies]
+bindgen = "0.37.0"
+glob = "0.2.11"
+syntex = "0.42" # keep syntex version in match with pnet_macros/Cargo.toml
+pnet = "0.25.0"
+pnet_macros_support = "0.25.0"
+pnet_macros = "0.25.0"
+
+[dependencies]
+byteorder = "1.2.3"
+chrono = "0.4.3"
+docopt = "1.0.0"
+failure = "0.1.1"
+failure_derive = "0.1.1"
+fern = "0.5.5"
+futures = "~0.1"
+lazy-pool = "0.2.2"
+log = "0.4.2"
+luajit = "0.1.1"
+num_cpus = "1.8.0"
+objpool = "0.2.0"
+packet = "0.1.2"
+parsip = "0.1.0"
+pool = "0.1.4"
+rlua = "0.15.0"
+serde = "1.0.66"
+serde_derive = "1.0.66"
+time = "0.1.40"
+pnet_macros_support = "0.25.0"
+pnet_macros = "0.25.0"
+
+[dependencies.hep3]
+path = "hep-rs"
+
+[dependencies.pnet]
+version = "0.25.0"
+features = ["pcap"]
+
+[features]
+default = ["sip"]
+sip = []

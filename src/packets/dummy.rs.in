@@ -1,0 +1,5 @@
+#[packet]
+pub struct Dummy {
+    #[payload]
+    pub payload: Vec<u8>,
+}

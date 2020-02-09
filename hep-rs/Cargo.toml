@@ -1,0 +1,25 @@
+[package]
+authors = ["Berkus Decker <berkus+cargo@metta.systems>"]
+name = "hep3"
+publish = false
+version = "0.1.0"
+build = "build.rs"
+
+[dependencies]
+serde = "1.0.38"
+serde_derive = "1.0.38"
+pnet = "0.25.0"
+pnet_macros_support = "0.25.0"
+pnet_macros = "0.25.0"
+#pnet = "*"
+#pnet_macros_support = "*"
+#pnet = {git = "https://github.com/berkus/libpnet.git", branch="add-packet-fanout"}
+#pnet_macros_support = {git = "https://github.com/berkus/libpnet.git", branch="add-packet-fanout"}
+
+
+[build-dependencies]
+glob = "0.2.*"
+syntex = "0.42" # keep syntex version in match with pnet_macros/Cargo.toml
+#pnet_macros = "*"
+#pnet_macros = {git = "https://github.com/berkus/libpnet.git", branch="add-packet-fanout"}
+pnet_macros = "0.25.0"
