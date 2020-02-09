@@ -1,8 +1,18 @@
 FROM ekidd/rust-musl-builder:latest AS builder
 WORKDIR /home/rust/src
 ADD --chown=rust:rust . ./
-RUN sudo apt update && sudo apt install -y libluajit-5.1-dev libpcap-dev \
- && cargo build --release
+
+RUN sudo apt update && sudo apt install -y flex bison
+
+RUN LIBPCAP_VERSION=1.8.1 && \
+    cd /home/rust/libs && \
+    curl -LO http://www.tcpdump.org/release/libpcap-${LIBPCAP_VERSION}.tar.gz && \
+    tar xzvf libpcap-${LIBPCAP_VERSION}.tar.gz && cd libpcap-${LIBPCAP_VERSION} && \
+    CC='musl-gcc -static -fPIC' LD=musl-ld ./configure --disable-shared && \
+    make -j4 && sudo make install && \
+    cd .. && rm -rf libpcap-${LIBPCAP_VERSION}*
+
+RUN cargo build --release
 
 
 FROM alpine:latest

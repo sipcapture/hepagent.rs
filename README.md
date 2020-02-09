@@ -15,6 +15,12 @@ Next-Generation [HEP](https://github.com/sipcapture/hep) Capture Agent in Rust
 #### Build
 * Run `cargo build --release`
 
+#### Docker Build
+* Dynamic
+  `docker build -t sipcapture/hepagent -f docker/Dockerfile .`
+* Static _(work in progress)_
+  `docker build -t sipcapture/hepagent-static -f docker/Dockerfile-static .`
+
 ---------
 
 #### Developers
