@@ -104,6 +104,12 @@ checksum = "4f67931368edf3a9a51d29886d245f1c3db2f1ef0dcc9e35ff70341b78c10d23"
 
 [[package]]
 name = "bitflags"
+version = "0.8.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1370e9fc2a6ae53aea8b7a5110edbd08836ed87c88736dfabccade1c2b44bff4"
+
+[[package]]
+name = "bitflags"
 version = "1.3.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "bef38d45163c2f1dde094a7dfd33ccf595c92905c8f8f4fdc18d06fb1037718a"
@@ -340,7 +346,7 @@ dependencies = [
  "pnet_macros_support",
  "serde",
  "serde_derive",
- "syntex",
+ "syntex 0.42.2",
 ]
 
 [[package]]
@@ -371,7 +377,7 @@ dependencies = [
  "rlua",
  "serde",
  "serde_derive",
- "syntex",
+ "syntex 0.58.1",
  "time",
 ]
 
@@ -709,8 +715,8 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "cf402424ca7281aa234b726c32bce5a8e2278c72f5863305e291ac3de08e16f8"
 dependencies = [
  "regex",
- "syntex",
- "syntex_syntax",
+ "syntex 0.42.2",
+ "syntex_syntax 0.42.0",
 ]
 
 [[package]]
@@ -732,7 +738,7 @@ dependencies = [
  "pnet_base",
  "pnet_macros",
  "pnet_macros_support",
- "syntex",
+ "syntex 0.42.2",
 ]
 
 [[package]]
@@ -929,8 +935,18 @@ version = "0.42.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0a30b08a6b383a22e5f6edc127d169670d48f905bb00ca79a00ea3e442ebe317"
 dependencies = [
- "syntex_errors",
- "syntex_syntax",
+ "syntex_errors 0.42.0",
+ "syntex_syntax 0.42.0",
+]
+
+[[package]]
+name = "syntex"
+version = "0.58.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a8f5e3aaa79319573d19938ea38d068056b826db9883a5d47f86c1cecc688f0e"
+dependencies = [
+ "syntex_errors 0.58.1",
+ "syntex_syntax 0.58.1",
 ]
 
 [[package]]
@@ -942,9 +958,22 @@ dependencies = [
  "libc",
  "log 0.3.9",
  "rustc-serialize",
- "syntex_pos",
+ "syntex_pos 0.42.0",
  "term",
  "unicode-xid 0.0.3",
+]
+
+[[package]]
+name = "syntex_errors"
+version = "0.58.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "867cc5c2d7140ae7eaad2ae9e8bf39cb18a67ca651b7834f88d46ca98faadb9c"
+dependencies = [
+ "libc",
+ "rustc-serialize",
+ "syntex_pos 0.58.1",
+ "term",
+ "unicode-xid 0.0.4",
 ]
 
 [[package]]
@@ -952,6 +981,15 @@ name = "syntex_pos"
 version = "0.42.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3fd49988e52451813c61fecbe9abb5cfd4e1b7bb6cdbb980a6fbcbab859171a6"
+dependencies = [
+ "rustc-serialize",
+]
+
+[[package]]
+name = "syntex_pos"
+version = "0.58.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "13ad4762fe52abc9f4008e85c4fb1b1fe3aa91ccb99ff4826a439c7c598e1047"
 dependencies = [
  "rustc-serialize",
 ]
@@ -966,10 +1004,24 @@ dependencies = [
  "libc",
  "log 0.3.9",
  "rustc-serialize",
- "syntex_errors",
- "syntex_pos",
+ "syntex_errors 0.42.0",
+ "syntex_pos 0.42.0",
  "term",
  "unicode-xid 0.0.3",
+]
+
+[[package]]
+name = "syntex_syntax"
+version = "0.58.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6e0e4dbae163dd98989464c23dd503161b338790640e11537686f2ef0f25c791"
+dependencies = [
+ "bitflags 0.8.2",
+ "log 0.3.9",
+ "rustc-serialize",
+ "syntex_errors 0.58.1",
+ "syntex_pos 0.58.1",
+ "unicode-xid 0.0.4",
 ]
 
 [[package]]
@@ -1057,6 +1109,12 @@ name = "unicode-xid"
 version = "0.0.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "36dff09cafb4ec7c8cf0023eb0b686cb6ce65499116a12201c9e11840ca01beb"
+
+[[package]]
+name = "unicode-xid"
+version = "0.0.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8c1f860d7d29cf02cb2f3f359fd35991af3d30bac52c57d265a3c461074cb4dc"
 
 [[package]]
 name = "unicode-xid"
