@@ -168,7 +168,7 @@ version = "0.23.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d7f7c04e52c35222fffcc3a115b5daf5f7e2bfb71c13c4e2321afe1fc71859c2"
 dependencies = [
- "glob",
+ "glob 0.2.11",
  "libc",
  "libloading",
 ]
@@ -325,10 +325,16 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8be18de09a56b60ed0edf84bc9df007e30040691af7acd1c41874faac5895bfb"
 
 [[package]]
+name = "glob"
+version = "0.3.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d2fabcfbdc87f4758337ca535fb41a6d701b65693ce38287d856d1674551ec9b"
+
+[[package]]
 name = "hep3"
 version = "0.1.0"
 dependencies = [
- "glob",
+ "glob 0.2.11",
  "pnet",
  "pnet_macros",
  "pnet_macros_support",
@@ -349,7 +355,7 @@ dependencies = [
  "failure_derive",
  "fern",
  "futures",
- "glob",
+ "glob 0.3.1",
  "hep3",
  "lazy-pool",
  "log 0.4.17",
@@ -722,7 +728,7 @@ version = "0.25.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c44c075c6d4f2e814dba621a999838e4a4f749f6117024f52b05b3c559a4fd17"
 dependencies = [
- "glob",
+ "glob 0.2.11",
  "pnet_base",
  "pnet_macros",
  "pnet_macros_support",
