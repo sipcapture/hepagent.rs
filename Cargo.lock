@@ -157,7 +157,7 @@ dependencies = [
  "js-sys",
  "num-integer",
  "num-traits",
- "time",
+ "time 0.1.45",
  "wasm-bindgen",
  "winapi 0.3.9",
 ]
@@ -372,7 +372,7 @@ dependencies = [
  "serde",
  "serde_derive",
  "syntex",
- "time",
+ "time 0.2.0",
 ]
 
 [[package]]
@@ -1039,6 +1039,12 @@ dependencies = [
  "wasi",
  "winapi 0.3.9",
 ]
+
+[[package]]
+name = "time"
+version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "fcc26de0a81a07c8352b548977862908fa9863e0e6e4f0eb36b2a9f4f8845585"
 
 [[package]]
 name = "unicode-ident"
