@@ -32,7 +32,7 @@ pool = "0.1.4"
 rlua = "0.15.0"
 serde = "1.0.66"
 serde_derive = "1.0.66"
-time = "0.1.40"
+time = "0.3.20"
 pnet_macros_support = "0.25.0"
 pnet_macros = "0.25.0"
 
