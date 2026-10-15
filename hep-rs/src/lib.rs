@@ -10,6 +10,7 @@
 #![allow(dead_code)]
 //#![feature(custom_attribute)]
 
+extern crate pnet_macros;
 extern crate pnet_macros_support;
 
 mod packet;

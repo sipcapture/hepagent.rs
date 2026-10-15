@@ -21,13 +21,14 @@ extern "system" {}
 
 #[macro_use]
 extern crate serde_derive;
+extern crate anyhow;
 extern crate futures;
 extern crate hep3;
+extern crate pnet_macros;
 extern crate num_cpus;
 extern crate objpool;
 extern crate pnet;
 extern crate pnet_macros_support;
-extern crate time;
 #[macro_use]
 extern crate log;
 extern crate chrono;
@@ -137,11 +138,6 @@ struct Args {
 //=======================================================================================
 // Error handling
 
-#[macro_use]
-extern crate failure;
-#[macro_use]
-extern crate failure_derive;
-
 mod errors;
 
 use errors::*;
@@ -247,12 +243,8 @@ fn main() {
                 if let Err(ref e) = Dissector::new(&name, datalink_rx, tx).unwrap().run() {
                     error!("error: {}", e);
 
-                    for cause in e.causes() {
+                    for cause in e.chain() {
                         error!("caused by: {}", cause);
-
-                        if let Some(backtrace) = cause.backtrace() {
-                            error!("backtrace: {:?}", backtrace);
-                        }
                     }
 
                     std::process::exit(1);
