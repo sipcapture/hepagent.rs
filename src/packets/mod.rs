@@ -39,7 +39,7 @@ use std::{
     sync::{mpsc::Sender, Arc},
     thread,
 };
-use time;
+use std::time::{SystemTime, UNIX_EPOCH};
 
 //=======================================================================================
 // Packet dissector
@@ -391,9 +391,12 @@ fn handle_payload(
 }
 
 fn send_hep(hep: &mut HepBuilder) {
-    let tm = time::precise_time_ns();
+    let tm = SystemTime::now()
+        .duration_since(UNIX_EPOCH)
+        .expect("system time before UNIX epoch")
+        .as_micros();
     let tm_sec = tm / 1_000_000;
-    let tm_ms = (tm - tm_sec * 1_000_000) / 1_000;
+    let tm_ms = tm % 1_000_000;
 
     hep
         .add_chunk(Chunk::timestampSec(tm_sec as u32))
