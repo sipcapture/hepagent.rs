@@ -135,12 +135,6 @@ checksum = "aedcfb3409746eddb02b9e19ebda1c3394f759a152e48ee875a0844d1b955484"
 
 [[package]]
 name = "futures"
-version = "0.1.31"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3a471a38ef8ed83cd6e40aa59c1ffe17db6855c18e3604d9c4ed8c08ebc28678"
-
-[[package]]
-name = "futures"
 version = "0.3.34"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9a31d2a3fbaaeb2af2368bbdd904aa8e812d3c04a1ee10d3171f52d556e5d0a3"
@@ -253,7 +247,7 @@ dependencies = [
  "chrono",
  "docopt",
  "fern",
- "futures 0.1.31",
+ "futures",
  "hep3",
  "lazy-pool",
  "log",
@@ -335,7 +329,7 @@ version = "2.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "bcb878851a92faa7abdd2b8dd063b573b40faa8fd8fcc366662ffb601926e29e"
 dependencies = [
- "futures 0.3.34",
+ "futures",
  "log",
  "thiserror",
 ]
