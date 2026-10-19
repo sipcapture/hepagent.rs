@@ -120,11 +120,10 @@ dependencies = [
 
 [[package]]
 name = "fern"
-version = "0.5.9"
+version = "0.7.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e69ab0d5aca163e388c3a49d284fed6c3d0810700e77c5ae2756a50ec1a4daaa"
+checksum = "4316185f709b23713e41e3195f90edef7fb00c3ed4adc79769cf09cc762a3b29"
 dependencies = [
- "chrono",
  "log",
 ]
 
